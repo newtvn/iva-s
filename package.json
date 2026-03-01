@@ -1,12 +1,24 @@
 {
   "name": "ivas-closet",
-  "version": "1.0.0",
-  "description": "IVAS Closet - Premium Fashion E-Commerce",
+  "version": "2.0.0",
+  "private": true,
+  "description": "IVAS Closet - Premium Fashion E-Commerce (React + Express)",
   "scripts": {
-    "dev": "npx serve . -p 3000 --no-clipboard",
-    "start": "npx serve . -p 3000",
-    "live": "npx live-server --port=3000 --open=index.html"
+    "server:install": "cd server && npm install",
+    "client:install": "cd client && npm install",
+    "install:all": "npm run server:install && npm run client:install",
+    "server:seed": "cd server && node seed.js",
+    "server:dev": "cd server && npm run dev",
+    "client:dev": "cd client && npm run dev",
+    "dev": "npm run server:dev & npm run client:dev",
+    "build": "cd client && npm run build",
+    "start": "NODE_ENV=production cd server && npm start"
   },
-  "keywords": ["fashion", "ecommerce", "kenya"],
+  "keywords": [
+    "ecommerce",
+    "fashion",
+    "react",
+    "express"
+  ],
   "author": "IVAS Closet"
 }
